@@ -374,4 +374,9 @@ const bills = [
 ];
 
 // Start coding here
-const billMembers;
+const memberNames = bills
+  .filter(bill => bill.member !== null)
+  .map(bill => bill.member.name);
+
+// แสดงผลลัพธ์ด้วย console.log
+console.log(JSON.stringify(memberNames, null, 2));

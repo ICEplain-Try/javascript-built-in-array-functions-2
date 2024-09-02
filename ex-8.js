@@ -374,5 +374,12 @@ const bills = [
 ];
 
 // Start coding here
+const totalPaidByLocation = bills.reduce((acc, bill) => {
+    // ถ้า location ยังไม่มีในออบเจ็กต์ ให้สร้างใหม่ด้วยยอดปัจจุบัน
+    // ถ้ามีแล้ว ให้เพิ่มยอดปัจจุบันเข้าไป
+    acc[bill.location] = (acc[bill.location] || 0) + bill.total;
+    return acc;
+  }, {});
 
-const totalPaidByLocation;
+// แสดงผลลัพธ์
+console.log(JSON.stringify(totalPaidByLocation, null, 2));

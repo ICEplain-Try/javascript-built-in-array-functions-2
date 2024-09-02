@@ -374,5 +374,7 @@ const bills = [
 ];
 
 // Start coding here
+const newBills = bills.filter(bill => bill.member !== null);
 
-const newBills;
+// แสดงผลลัพธ์ด้วย console.log
+console.log(JSON.stringify(newBills, null, 2));
